@@ -1,7 +1,15 @@
-"use client"
-import { Video } from '@imagekit/next';
+"use client" 
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Loader from './components/Loader';
+
+interface Video {
+  _id: string;
+  title: string;
+  description: string;
+  videoUrl: string;
+  thumbnailUrl: string;
+}
 
 export default function Home() {
   const [videos, setVideos] = useState([]);
@@ -37,7 +45,7 @@ export default function Home() {
         {/* Video Grid */}
         {videos && videos.length > 0 ? (
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 w-full max-w-7xl">
-            {videos.map((video, index) => (
+            {videos.map((video:Video, index) => (
               <div 
                 key={video._id}
                 className="group relative bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-2xl p-6 transition-all duration-500 hover:transform hover:-translate-y-2 hover:border-white/20 hover:bg-white/[0.05] hover:shadow-2xl hover:shadow-black/40"
@@ -88,9 +96,10 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className="flex items-center justify-center h-64">
-            <p className="text-white/60 text-lg">No videos available yet</p>
-          </div>
+          // <div className="flex items-center justify-center h-64">
+          //   <p className="text-white/60 text-lg">No videos available yet</p>
+          // </div>
+          <Loader/>
         )}
 
         {/* Footer */}

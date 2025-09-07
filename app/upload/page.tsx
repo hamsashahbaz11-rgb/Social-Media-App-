@@ -2,6 +2,10 @@
 import React, { useState } from 'react'
 import FileUpload from '../components/FileUpload'
 
+export interface IHandleSuccess {
+  thumbnailUrl?: string;
+  url: string;
+}
 const UplaodVideo = () => {
   const [title,  setTitle] = useState("")
   const [description, setDescription] = useState("")
@@ -9,7 +13,7 @@ const UplaodVideo = () => {
  
   const [thumbnailUrl, setThumbnailUrl] = useState("")
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async(e: React.FormEvent) => {
     try {
       e.preventDefault();
       const res = await fetch("/api/video", {
@@ -34,25 +38,14 @@ const UplaodVideo = () => {
     }
   }
 
-  const handleSuccess = async (req) => {
-    console.log(req)
-    setVideoUrl(req.url)
+  const handleSuccess = async (req: IHandleSuccess) => {
+     setVideoUrl(req.url)
     if(req.thumbnailUrl){
       setThumbnailUrl(req.thumbnailUrl)
     }
   }
   return (
-    // <div>
-    //   <form onSubmit={handleSubmit} className='flex justify-center items-center flex-col bg-gray-900 h-2/3' encType='multipart/form-data'>
-    //   <input type="text" name="title" placeholder="Enter Video Title" id="" 
-    //   onChange={(e) => setTitle(e.target.value)} className='w-80 text-white border px-2 hover:bg-gray-800 py-2 m-1 rounded-lg shadow-2xs' />
-    //   <hr />
-    //    <input type="text" name="description" onChange={(e) => setDescription(e.target.value)} placeholder="Enter Video description" id=""   className='w-80 text-white border px-2 hover:bg-gray-800 py-2 m-1 rounded-lg shadow-2xs' />
-    //    <hr />
-    //   <FileUpload onSuccess={handleSuccess}  />
-    // <button type="submit" className=' text-white  hover:bg-gray-800 p-1 m-1'>Upload</button>
-    //   </form>
-    // </div>
+    
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background effects */}
       <div className="fixed inset-0 pointer-events-none">

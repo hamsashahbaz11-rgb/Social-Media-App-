@@ -11,7 +11,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className="relative z-50 bg-black/80 backdrop-blur-xl border-b border-white/10 sticky top-0">
+        <nav className=" z-50 bg-black/80 backdrop-blur-xl border-b border-white/10 sticky top-0">
             <div className="max-w-7xl mx-auto px-6 py-4">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
@@ -44,7 +44,7 @@ const Navbar = () => {
                                     <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white/60 to-white/30 group-hover:w-full transition-all duration-300"></div>
                                 </Link>) : (
                                 <Link href="/register" className="relative text-white/80 hover:text-white transition-colors duration-300 group">
-                                    <span className="relative z-10">Regiter</span>
+                                    <span className="relative z-10">Register</span>
                                     <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-white/60 to-white/30 group-hover:w-full transition-all duration-300"></div>
                                 </Link>)}
                         </li>
@@ -92,7 +92,7 @@ const Navbar = () => {
                                 </Link>) : (
                                 <Link href="/register"  className="block text-white/80 hover:text-white transition-colors duration-300 py-2 px-4 rounded-lg hover:bg-white/5"
                                 onClick={() => setIsMenuOpen(false)}>
-                                    <span className="relative z-10">Regiter</span>
+                                    <span className="relative z-10">Register</span>
                                  </Link>)}
                         </li>
                     </ul>

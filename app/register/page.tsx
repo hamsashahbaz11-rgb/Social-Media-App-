@@ -43,42 +43,7 @@ const Register = () => {
         }
     }
     return (
-        // <div className='flex justify-center items-center flex-col h-screen'>
-        //     <h1 className='font-bold text-7xl text-amber-500'>Register User</h1>
-        //     <form onSubmit={handleSubmit} className='flex justify-center items-center flex-col bg-gray-900 h-2/3'>
-        //         <input
-        //             type="text"
-        //             name="email"
-        //             placeholder="Enter your Email"
-        //             value={email}
-        //             id=""
-        //             className='w-80 text-white border px-2 hover:bg-gray-800 py-2 m-1 rounded-lg shadow-2xs'
-        //             onChange={(e) => setEmail(e.target.value)} />
-        //         <div className='flex flex-row '>
-
-        //             <input
-        //                 type="password"
-        //                 name="password"
-        //                 placeholder="Enter Password"
-        //                 value={password}
-        //                 id=""
-        //                 className='w-80 text-white border hover:bg-gray-800 p-1 m-1'
-        //                 onChange={(e) => setPassword(e.target.value)} />
-
-
-        //         </div>
-        //         <input
-        //             type="password"
-        //             name="confirmPassword"
-        //             placeholder="Enter Confirm Password"
-        //             value={confirmPassword}
-        //             id=""
-        //             className='w-80 text-white border hover:bg-gray-800 p-1 m-1'
-        //             onChange={(e) => setConfirmPassword(e.target.value)} />
-        //         <button type="submit" className=' text-white  hover:bg-gray-800 p-1 m-1'>Register</button>
-        //     </form>
-        //     <div>Already have an account? <Link href="/login">Login</Link></div>
-        // </div>
+        
     
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black flex items-center justify-center p-4 relative overflow-hidden">
       {/* Background effects */}
